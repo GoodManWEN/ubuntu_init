@@ -22,6 +22,9 @@ swapon /swapswap
 echo "/swapswap swap swap defaults 0 0">>/etc/fstab
 free -m
 
+# bt
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
+
 # update
 apt update 
 apt upgarade -y
@@ -41,9 +44,6 @@ pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi uvicorn[
 # install node 16
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
-# bt
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
 
 # bbr
 echo net.core.default_qdisc=fq >> /etc/sysctl.conf
