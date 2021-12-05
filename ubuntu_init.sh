@@ -22,9 +22,6 @@ swapon /swapswap
 echo "/swapswap swap swap defaults 0 0">>/etc/fstab
 free -m
 
-# bt
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
-
 # update
 apt update 
 apt upgarade -y
@@ -98,3 +95,5 @@ python3 tmp.py
 rm tmp.py
 systemctl start v2ray
 
+# bt
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh
