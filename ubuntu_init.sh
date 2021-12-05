@@ -14,6 +14,14 @@ rm tmp.py
 service ssh restart
 service sshd restart
 
+# swap
+dd if=/dev/zero of=/swapswap bs=1M count=1024
+chmod 0600 /swapswap
+mkswap -f /swapswap
+swapon /swapswap
+echo "/swapswap swap swap defaults 0 0">>/etc/fstab
+free -m
+
 # update
 apt update 
 apt upgarade -y
@@ -88,3 +96,5 @@ print('#'*2000,'\n',u,'\n','#'*2000)
 EOF
 python3 tmp.py
 rm tmp.py
+systemctl start v2ray
+
