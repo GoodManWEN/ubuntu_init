@@ -27,7 +27,7 @@ apt update
 apt upgarade -y
 
 # essential
-apt install ntpdate vim htop unzip supervisor fail2ban sudo -y
+apt install ntpdate vim htop unzip supervisor fail2ban sudo git -y
 
 
 # install python 3.8
