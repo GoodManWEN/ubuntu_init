@@ -26,10 +26,6 @@ free -m
 apt update 
 apt upgarade -y
 
-# essential
-apt install ntpdate vim htop unzip supervisor fail2ban sudo git -y
-
-
 # install python 3.8
 sudo apt-get install build-essential libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev libbz2-dev -y
 wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
@@ -42,6 +38,8 @@ cd
 rm Python-3.8.10.tgz
 rm -rf Python-3.8.10
 
+# essential
+apt install ntpdate vim htop unzip supervisor fail2ban sudo git -y
 
 # install node 16
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
