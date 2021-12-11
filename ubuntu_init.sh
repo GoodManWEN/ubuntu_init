@@ -38,6 +38,10 @@ cd Python-3.8.10
 ./configure --enable-optimizations
 make && make install
 pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi pipeit uvicorn[standard] -y
+cd
+rm Python-3.8.10.tgz
+rm -rf Python-3.8.10
+
 
 # install node 16
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -48,6 +52,19 @@ echo net.core.default_qdisc=fq >> /etc/sysctl.conf
 echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf
 sysctl -p
 sysctl net.ipv4.tcp_available_congestion_control
+
+# axel
+wget https://github.com/axel-download-accelerator/axel/releases/download/v2.17.10/axel-2.17.10.tar.gz
+tar -zxvf axel-2.17.10.tar.gz
+cd axel-2.17.10
+./configure --prefix=/usr/local/axel
+make && make install
+ln /usr/local/axel/bin/axel /usr/local/bin/axel
+echo "alias axel='axel -n 16'" >> ~/.bashrc
+source ~/.bashrc
+cd
+rm -rf axel-2.17.10
+rm axel-2.17.10.tar.gz
 
 # v2
 bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
