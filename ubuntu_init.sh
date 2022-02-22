@@ -42,7 +42,7 @@ rm Python-3.8.10.tgz
 rm -rf Python-3.8.10
 
 # essential
-apt install ntpdate vim htop unzip supervisor fail2ban sudo git -y
+apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl -y
 
 # install node 16
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
