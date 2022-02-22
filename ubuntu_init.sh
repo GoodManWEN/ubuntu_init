@@ -1,3 +1,6 @@
+# time
+timedatectl set-timezone UTC
+
 # auth
 cat>tmp.py<<EOF
 with open('/etc/ssh/sshd_config','r') as f:
