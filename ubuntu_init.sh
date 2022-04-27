@@ -36,7 +36,7 @@ tar -zxvf Python-3.8.10.tgz
 cd Python-3.8.10
 ./configure --enable-optimizations
 make && make install
-pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi pipeit uvicorn[standard] ThreadPoolExecutorPlus -y
+pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi pipeit uvicorn[standard] ThreadPoolExecutorPlus
 cd
 rm Python-3.8.10.tgz
 rm -rf Python-3.8.10
