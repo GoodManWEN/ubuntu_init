@@ -46,6 +46,7 @@ apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-serve
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 
 # configure fail2ban
 cat>tmp.py<<EOF
