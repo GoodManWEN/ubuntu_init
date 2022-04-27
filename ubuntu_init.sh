@@ -44,6 +44,9 @@ rm -rf Python-3.8.10
 # essential
 apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
 
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 # configure fail2ban
 cat>tmp.py<<EOF
 import re
