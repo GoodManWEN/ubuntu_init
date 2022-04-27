@@ -42,7 +42,7 @@ rm Python-3.8.10.tgz
 rm -rf Python-3.8.10
 
 # essential
-apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl -y
+apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
 
 # configure fail2ban
 cat>tmp.py<<EOF
