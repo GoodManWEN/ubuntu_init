@@ -44,6 +44,29 @@ rm -rf Python-3.8.10
 # essential
 apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl -y
 
+# configure fail2ban
+cat>tmp.py<<EOF
+import re
+with open('/etc/fail2ban/jail.conf','r') as f:
+    text = f.readlines()
+status = ""
+for idx in range(len(text)):
+    line = text[idx]
+    node = re.search('\[[a-zA-Z0-9_\-]+\]\n', line)
+    if node:
+        status = node.group()[1:-2]
+    if status == 'DEFAULT': 
+        if 'bantime  = 10m' in line:
+            text[idx] = 'bantime  = 48h\n'
+        elif 'maxretry = 5' in line:
+            text[idx] = 'maxretry = 6\n'
+with open('/etc/fail2ban/jail.conf','w') as f:
+    f.writelines(text)
+EOF
+python3 tmp.py
+rm tmp.py
+service fail2ban restart
+
 # install node 16
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
