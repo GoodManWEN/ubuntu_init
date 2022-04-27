@@ -104,7 +104,7 @@ cat>/usr/local/etc/v2ray/config.json<<EOF
         "clients": [
           {
             "id": "{{uuid}}",
-            "alterId": 8
+            "alterId": 0
           }
         ]
       },
