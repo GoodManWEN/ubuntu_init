@@ -27,7 +27,7 @@ free -m
 
 # update
 apt update 
-apt upgarade -y
+apt upgrade -y
 
 # install python 3.8
 sudo apt-get install build-essential libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev libbz2-dev -y
