@@ -9,6 +9,8 @@ for idx in range(len(text)):
     line = text[idx]
     if 'PermitRootLogin yes' in line:
         text[idx] = 'PermitRootLogin no\n'
+    elif '#Port ' in line or '# Port' in line or 'Port 'in line:
+        text[idx] = 'Port 22000\n'
 with open('/etc/ssh/sshd_config','w') as f:
     f.writelines(text)
 EOF
