@@ -136,3 +136,11 @@ chown -R oracle:oinstall /home/oracle/scripts
 chmod u+x /home/oracle/scripts/*.sh
 
 reboot
+
+# 安装前执行(oracle账号权限下)
+# export CV_ASSUME_DISTID=OEL7.6 && ./runInstaller
+# 过程中选择单机-服务器类，oracle base 设置为/u01/app/oracle
+# global database name设置为orcl.localdomain，sid设置为cdb1
+# 倒数第几步里，需要设置安装脚本，选择以root权限自动安装
+# 安装结束后修改/etc/oratab结果为Y
+# 然后oracle用户运行~/scripts/start_all.sh启动
