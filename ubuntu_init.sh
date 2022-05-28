@@ -97,8 +97,8 @@ rm -rf axel-2.17.10
 rm axel-2.17.10.tar.gz
 
 # v2
-#bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
-#bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh)
 cat>/usr/local/etc/v2ray/config.json<<EOF
 {
   "inbounds": [
@@ -139,9 +139,9 @@ text = Read('/usr/local/etc/v2ray/config.json').replace('{{uuid}}', f'{u}')
 Write('/usr/local/etc/v2ray/config.json', text)
 print('#'*2000,'\n',u,'\n','#'*2000)
 EOF
-#python3 tmp.py
+python3 tmp.py
 rm tmp.py
-#systemctl start v2ray
+systemctl start v2ray
 
 # bt
 curl -sSO https://raw.githubusercontent.com/zhucaidan/btpanel-v7.7.0/main/install/install_panel.sh && bash install_panel.sh
