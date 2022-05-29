@@ -1,6 +1,3 @@
-# time
-timedatectl set-timezone UTC
-
 # auth
 cat>tmp.py<<EOF
 with open('/etc/ssh/sshd_config','r') as f:
@@ -45,6 +42,11 @@ rm -rf Python-3.8.10
 
 # essential
 apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
+
+# ntp
+apt install ntp systemd-timesyncd -y
+timedatectl set-ntp true
+timedatectl set-timezone Asia/Shanghai
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
