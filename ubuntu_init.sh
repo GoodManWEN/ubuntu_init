@@ -30,15 +30,15 @@ apt upgrade -y
 
 # install python 3.8
 sudo apt-get install build-essential libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl libffi-dev libbz2-dev -y
-wget https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
-tar -zxvf Python-3.8.10.tgz
-cd Python-3.8.10
+wget https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
+tar -zxvf Python-3.10.5.tgz
+cd Python-3.10.5
 ./configure --enable-optimizations
 make && make install
 pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi pipeit uvicorn[standard] ThreadPoolExecutorPlus
 cd
-rm Python-3.8.10.tgz
-rm -rf Python-3.8.10
+rm Python-3.10.5.tgz
+rm -rf Python-3.10.5
 
 # essential
 apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
@@ -143,6 +143,7 @@ print('#'*2000,'\n',u,'\n','#'*2000)
 EOF
 python3 tmp.py
 rm tmp.py
+systemctl enable v2ray
 systemctl start v2ray
 
 # bt
