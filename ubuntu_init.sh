@@ -70,6 +70,14 @@ for idx in range(len(text)):
             text[idx] = 'maxretry = 6\n'
 with open('/etc/fail2ban/jail.conf','w') as f:
     f.writelines(text)
+with open('/etc/fail2ban/paths-common.conf','r') as f:
+    text = f.readlines()
+for idx in range(len(text)):
+    line = text[idx]
+    if 'sshd_backend = ' in line:
+        text[idx] = 'sshd_backend = systemd'
+with open('/etc/fail2ban/paths-common.conf','w') as f:
+    f.writelines(text)
 EOF
 python3 tmp.py
 rm tmp.py
