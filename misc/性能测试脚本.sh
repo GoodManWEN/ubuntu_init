@@ -9,3 +9,8 @@ wget -qO- bench.sh | bash
 
 # SuperBench.sh
 wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+
+# 新版
+wget -qO- down.vpsaff.net/linux/speedtest/superbench.sh | sudo bash
+或
+bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench.sh)
