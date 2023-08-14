@@ -41,7 +41,7 @@ rm Python-3.11.1.tgz
 rm -rf Python-3.11.1
 
 # essential
-apt install ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
+apt install apt-transport-https ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
 
 # ntp
 apt install ntp systemd-timesyncd -y
