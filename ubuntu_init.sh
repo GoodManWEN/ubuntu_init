@@ -43,6 +43,9 @@ rm -rf Python-3.11.1
 # essential
 apt install apt-transport-https ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
 
+# system journal
+journalctl --vacuum-size=50M
+
 # ntp
 apt install ntp systemd-timesyncd -y
 timedatectl set-ntp true
