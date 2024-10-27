@@ -39,6 +39,9 @@ pip3 install requests uvloop aiohttp pipeit beautifulsoup4 lxml fastapi pipeit u
 cd
 rm Python-3.11.1.tgz
 rm -rf Python-3.11.1
+# 检查是否落实符号连接
+# which python3.11
+# sudo ln -sf /usr/local/bin/python3.11 /usr/bin/python3
 
 # essential
 apt install apt-transport-https ntpdate vim htop unzip supervisor fail2ban sudo git curl redis-server redis-tools -y
