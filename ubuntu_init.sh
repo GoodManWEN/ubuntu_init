@@ -165,3 +165,9 @@ curl -sSO https://raw.githubusercontent.com/zhucaidan/btpanel-v7.7.0/main/instal
 sed -i "s|if (bind_user == 'True') {|if (bind_user == 'REMOVED') {|g" /www/server/panel/BTPanel/static/js/index.js
 rm -rf /www/server/panel/data/bind.pl
 rm -f /www/server/panel/data/bind.pl
+
+# Prohibit Core Dump
+echo "fs.suid_dumpable = 0" >> /etc/sysctl.d/99-secure.conf
+sysctl -p /etc/sysctl.d/99-secure.conf
+# should return 0
+sysctl fs.suid_dumpable  
